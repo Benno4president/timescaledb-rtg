@@ -23,7 +23,7 @@ The stack consists of the following components:
 ### Setup
 
 1. Clone the repository and navigate to the root directory.
-2. Create a `config.env` file with the following environment variables:
+2. Create a `.env` file with the following environment variables:
 	* `POSTGRES_USER`
 	* `POSTGRES_PASSWORD`
 	* `POSTGRES_DB`
@@ -32,13 +32,12 @@ The stack consists of the following components:
 	* `GF_SECURITY_ADMIN_PASSWORD`
 	* `GF_SERVER_ROOT_URL`
 	* `GF_PLUGINS_PREINSTALL`
-	* `TELEGRAF_POSTGRES_HOST`
-	* `TELEGRAF_POSTGRES_PORT`
-	* `TELEGRAF_POSTGRES_USER=${POSTGRES_USER}`
-	* `TELEGRAF_POSTGRES_PASSWORD=${POSTGRES_PASSWORD}`
-	* `TELEGRAF_POSTGRES_DB=${POSTGRES_DB}`
 
-3. Run `docker-compose up -d` to start the stack in detached mode.
+3. Create or modify telegraf.conf. A connection string needs to be set under outputs.postgres.
+	* `connection="postgresql://user:password@host:port/dbname"`
+	* If using env variables they should be set in `/etc/default/telegraf`
+
+4. Run `docker-compose up -d` to start the stack in detached mode.
 
 ### Telegraf Configuration
 

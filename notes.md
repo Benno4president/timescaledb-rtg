@@ -11,6 +11,8 @@ postgress could not bind to port, already in use. => https://superuser.com/quest
 make graphana dash for telegraf metrics: https://docs.tigerdata.com/integrations/latest/grafana/
 - goal: full system dashboard: https://grafana.com/grafana/dashboards/928-telegraf-system-dashboard/
 
+cleanup:  
+- `docker compose down --rmi all --volumes`
 
 pgadmin for internal db stats + explorer: https://www.pgadmin.org/
 
